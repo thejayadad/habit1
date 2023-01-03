@@ -21,6 +21,7 @@ const port = process.env.PORT || 5000;
 require('dotenv').config();
 
 const uri = process.env.ATLAS_URI;
+mongoose.set("strictQuery", false);
 mongoose.connect(uri, { useNewUrlParser: true }
 );
 const connection = mongoose.connection;
@@ -31,4 +32,4 @@ connection.once('open', () => {
 
 app.listen(3100, () => {
     console.log("We are going on the port")
-})
+})  
